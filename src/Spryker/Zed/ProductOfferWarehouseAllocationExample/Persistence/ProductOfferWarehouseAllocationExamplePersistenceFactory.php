@@ -17,9 +17,6 @@ use Spryker\Zed\ProductOfferWarehouseAllocationExample\ProductOfferWarehouseAllo
  */
 class ProductOfferWarehouseAllocationExamplePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ProductOfferStock\Persistence\SpyProductOfferStockQuery
-     */
     public function getProductOfferStockPropelQuery(): SpyProductOfferStockQuery
     {
         return $this->getProvidedDependency(ProductOfferWarehouseAllocationExampleDependencyProvider::PROPEL_QUERY_PRODUCT_OFFER_STOCK);

@@ -44,9 +44,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
      */
     protected ProductOfferTransfer $productOffer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -56,9 +53,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         $this->productOffer = $this->tester->haveProductOffer();
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseAssignsWarehouseWithNeverOutOfStock(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseAssignsWarehouseWithHighestQuantity(): void
     {
         // Arrange
@@ -136,9 +127,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseDoesNotAssignWarehouseWhenProductOfferIsNotProvided(): void
     {
         // Arrange
@@ -161,9 +149,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         $this->assertNull($orderTransfer->getItems()->offsetGet(0)->getWarehouse());
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseDoesNotAssignNewWarehouseWhenWarehouseIdIsProvided(): void
     {
         // Arrange
@@ -193,9 +178,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseDoesNotAssignWrongWarehouseWhenProductOfferStockNotFound(): void
     {
         // Arrange
@@ -220,9 +202,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         $this->assertNull($orderTransfer->getItems()->offsetGet(0)->getWarehouse());
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseAssignsWarehouseWhenQuantityIsNotEnough(): void
     {
         // Arrange
@@ -250,9 +229,6 @@ class ProductOfferWarehouseAllocationExampleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testAllocateSalesOrderWarehouseThrowsExceptionWhenStoreIsNotSetToOrderTransfer(): void
     {
         // Arrange

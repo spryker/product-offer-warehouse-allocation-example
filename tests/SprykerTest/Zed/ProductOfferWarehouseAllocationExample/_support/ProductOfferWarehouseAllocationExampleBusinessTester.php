@@ -33,12 +33,6 @@ class ProductOfferWarehouseAllocationExampleBusinessTester extends Actor
 {
     use _generated\ProductOfferWarehouseAllocationExampleBusinessTesterActions;
 
-    /**
-     * @param string|null $storeName
-     * @param string|null $productOfferReference
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createOrderTransfer(?string $storeName = null, ?string $productOfferReference = null): OrderTransfer
     {
         return (new OrderTransfer())
@@ -50,9 +44,6 @@ class ProductOfferWarehouseAllocationExampleBusinessTester extends Actor
             );
     }
 
-    /**
-     * @return void
-     */
     public function ensureProductOfferStockTableIsEmpty(): void
     {
         $productOfferStockQuery = $this->getProductOfferStockQuery();
@@ -60,9 +51,6 @@ class ProductOfferWarehouseAllocationExampleBusinessTester extends Actor
         $productOfferStockQuery->deleteAll();
     }
 
-    /**
-     * @return \Orm\Zed\ProductOfferStock\Persistence\SpyProductOfferStockQuery
-     */
     protected function getProductOfferStockQuery(): SpyProductOfferStockQuery
     {
         return SpyProductOfferStockQuery::create();
